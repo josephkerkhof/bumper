@@ -60,7 +60,7 @@ export const IntroBumper: React.FC = () => {
 
 	// Typing animation with random variation
 	const textToType = 'Happily Hacking';
-	const baseCharsPerSecond = 12; // Typing speed
+	const baseCharsPerSecond = 15; // Typing speed
 	const framesSinceTypingStart = Math.max(0, frame - typingStart);
 
 	// Calculate which character should be showing with random variation
@@ -188,7 +188,7 @@ export const IntroBumper: React.FC = () => {
 				)}
 
 				{/* Audio - Plays after typingStart frames (1.8s = 54 frames at 30fps) */}
-				<Sequence from={typingStart}>
+				<Sequence from={typingStart - 5}>
 					<Audio src={staticFile('typing.m4a')} volume={0.2} />
 				</Sequence>
 			</AbsoluteFill>
